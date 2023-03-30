@@ -1,13 +1,13 @@
-import express from 'express'
-import { env } from './env'
+import express from 'express';
+import { env } from './env';
 
 
-const app = express()
+const app = express();
 
 
 app.get('/', (req, res) => { 
-    res.send('Hello World!')
-})
+	res.send('Hello World!');
+});
 
 
-app.listen(env.PORT, () => console.log('listening on port 8080'))
+app.listen(env.PORT, () => console.log('listening on port 8080'));

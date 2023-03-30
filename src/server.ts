@@ -1,4 +1,5 @@
 import express from 'express'
+import { env } from './env'
 
 
 const app = express()
@@ -9,4 +10,4 @@ app.get('/', (req, res) => {
 })
 
 
-app.listen(8080, () => console.log('listening on port 8080'))
+app.listen(env.PORT, () => console.log('listening on port 8080'))

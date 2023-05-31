@@ -1,0 +1,17 @@
+name: Run Unit Tests
+
+on: [push] # Quando vai ser executado as actions
+
+jobs:
+  run-unit-tests: # primeiro job
+    name: Run Unit Tests # nome do job
+    runs-on: ubuntu-latest # qual maquina vai ser executada os testes
+
+    steps: # passo a passo para rodar o projeto
+      - uses: actions/checkout@v3 # baixa o codigo na maquina
+      - uses: actions/setup-node@v3 # instalar o node
+        with:
+          node-version: 18 #versão do node
+          cache: 'npm' # criar um cache para reaproveitar as dependencias
+      - run: npm ci # instalar o projeto
+      - run: npm test # executar os testes unitarios

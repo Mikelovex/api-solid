@@ -13,5 +13,5 @@ jobs:
         with:
           node-version: 18 #versão do node
           cache: 'yarn' # criar um cache para reaproveitar as dependencias
-      - run: yarn ci # instalar o projeto
+      - run: yarn install --frozen-lockfile # instalar o projeto
       - run: yarn run test # executar os testes unitarios

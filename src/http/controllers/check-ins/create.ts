@@ -8,6 +8,8 @@ export async function createCheckInController(req: Request, res: Response) {
 		gymId: z.string().uuid()
 	});
 
+	console.log('eae');
+
 	const createCheckInBodySchema = z.object({
 		latitude: z.number().refine((value) => {
 			return Math.abs(value) <= 90;
